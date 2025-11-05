@@ -1,15 +1,37 @@
-import { ReactNode } from "react";
-import { redirect } from "next/navigation";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+"use client";
 
-export default async function DashboardLayout({ children }: { children: ReactNode }) {
-	const supabase = createSupabaseServerClient();
-	const {
-		data: { session },
-	} = await supabase.auth.getSession();
+import { ReactNode, useEffect, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { supabase } from "@/lib/supabase/client";
 
-	if (!session) {
-		redirect("/login");
+export default function DashboardLayout({ children }: { children: ReactNode }) {
+	const router = useRouter();
+	const pathname = usePathname();
+	const [checking, setChecking] = useState(true);
+
+	useEffect(() => {
+		let mounted = true;
+		supabase.auth.getSession().then(({ data }) => {
+			if (!mounted) return;
+			if (!data.session) {
+				router.replace("/login");
+			} else {
+				setChecking(false);
+			}
+		});
+		return () => {
+			mounted = false;
+		};
+	}, [router, pathname]);
+
+	if (checking) {
+		return (
+			<html lang="en">
+				<body className="min-h-screen bg-gray-800 text-white">
+					<div className="container mx-auto px-4 py-16 text-center text-gray-300">Loading...</div>
+				</body>
+			</html>
+		);
 	}
 
 	return (
