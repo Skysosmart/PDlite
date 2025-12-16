@@ -27,8 +27,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 	if (checking) {
 		return (
 			<html lang="en">
-				<body className="min-h-screen bg-gray-800 text-white">
-					<div className="container mx-auto px-4 py-16 text-center text-gray-300">Loading...</div>
+				<body className="min-h-screen bg-gray-100 text-gray-900">
+					<div className="container mx-auto px-4 py-16 text-center text-gray-500">Loading...</div>
 				</body>
 			</html>
 		);
@@ -36,13 +36,13 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 
 	return (
 		<html lang="en">
-			<body className="min-h-screen bg-gray-800 text-white">
-				<div className="border-b border-gray-700">
+			<body className="min-h-screen bg-gray-50 text-gray-900">
+				<div className="border-b border-gray-200 bg-white/80 backdrop-blur">
 					<nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-						<div className="text-xl font-bold text-green-500">PD Lite</div>
-						<div className="flex gap-6 text-gray-200">
-							<a href="/user" className="hover:text-green-500">User</a>
-							<a href="/doctor" className="hover:text-green-500">Doctor</a>
+						<div className="text-xl font-bold text-emerald-600">PD Lite</div>
+						<div className="flex gap-6 text-gray-600">
+							<a href="/user" className="hover:text-emerald-600 font-medium">Patient</a>
+							<a href="/doctor" className="hover:text-emerald-600 font-medium">Doctor</a>
 						</div>
 					</nav>
 				</div>

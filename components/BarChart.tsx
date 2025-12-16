@@ -11,7 +11,7 @@ type Props = {
 
 export default function BarChartView({ values }: Props) {
 	return (
-		<div className="bg-gray-700/50 border border-gray-600 rounded-xl p-5">
+		<div className="card p-5">
 			<Bar
 				data={{
 					labels: ["Total α-syn", "Oligomeric α-syn", "DJ-1", "Tau"],
@@ -23,7 +23,13 @@ export default function BarChartView({ values }: Props) {
 						},
 					],
 				}}
-				options={{ plugins: { legend: { labels: { color: "#e5e7eb" } } }, scales: { y: { beginAtZero: true } } }}
+				options={{
+					plugins: { legend: { labels: { color: "#111827" } } },
+					scales: {
+						y: { beginAtZero: true, ticks: { color: "#475467" }, grid: { color: "#e5e7eb" } },
+						x: { ticks: { color: "#475467" }, grid: { color: "#f3f4f6" } },
+					},
+				}}
 			/>
 		</div>
 	);

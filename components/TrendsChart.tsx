@@ -17,7 +17,7 @@ type Point = { t: string; total_syn?: number; oligomeric_syn?: number; dj1?: num
 export default function TrendsChart({ data }: { data: Point[] }) {
 	const labels = data.map((d) => d.t);
 	return (
-		<div className="bg-gray-700/50 border border-gray-600 rounded-xl p-5">
+		<div className="card p-5">
 			<Line
 				data={{
 					labels,
@@ -31,8 +31,12 @@ export default function TrendsChart({ data }: { data: Point[] }) {
 				}}
 				options={{
 					responsive: true,
-					scales: { y: { beginAtZero: true }, y1: { position: "right", min: 0, max: 1 } },
-					plugins: { legend: { labels: { color: "#e5e7eb" } } },
+					scales: {
+						y: { beginAtZero: true, ticks: { color: "#475467" }, grid: { color: "#e5e7eb" } },
+						y1: { position: "right", min: 0, max: 1, ticks: { color: "#475467" }, grid: { color: "#f3f4f6" } },
+						x: { ticks: { color: "#475467" }, grid: { color: "#f3f4f6" } },
+					},
+					plugins: { legend: { labels: { color: "#111827" } } },
 				}}
 			/>
 		</div>
