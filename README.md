@@ -25,6 +25,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Tailwind CSS** - Styling
 - **ESLint** - Code linting
 
+## Documentation
+
+- [PDLite Web System Design Specification](docs/PDLite-web-spec.md)
+
 ## Color Theme
 
 - **Gray**: #282828 (Primary background)
