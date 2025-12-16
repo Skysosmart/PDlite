@@ -37,7 +37,7 @@ export default function Home() {
           </ScrollAnimation>
           <ScrollAnimation delay={400}>
             <p className="text-2xl md:text-4xl text-gray-700 mb-12 max-w-4xl mx-auto font-light leading-relaxed">
-              Saliva-based pre-screening for Parkinson's with real-time web dashboards.
+            Saliva-based pre-screening for Parkinson’s with real-time web dashboards.
             </p>
           </ScrollAnimation>
           <ScrollAnimation delay={600}>
@@ -128,7 +128,7 @@ export default function Home() {
                   <h3 className="text-2xl font-semibold text-gray-900">DeepSeek AI Analysis</h3>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Our AI system analyzes biomarker patterns from your test results using DeepSeek's advanced language model 
+                  Our AI system analyzes biomarker patterns from your test results using DeepSeek’s advanced language model 
                   to identify risk factors and provide actionable insights.
                 </p>
                 <ul className="space-y-2 text-gray-700">
@@ -214,9 +214,9 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Information</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="card p-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">About Parkinson's Disease</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">About Parkinson’s Disease</h3>
               <p className="text-gray-700 mb-4">
-                Parkinson's Disease is a progressive neurological disorder that affects movement. Early detection through 
+                Parkinson’s Disease is a progressive neurological disorder that affects movement. Early detection through 
                 salivary biomarkers can help identify risk factors before symptoms become severe.
               </p>
               <p className="text-gray-700">
@@ -295,7 +295,7 @@ export default function Home() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Get in Touch</h3>
                 <p className="text-gray-700 mb-4">
-                  Have questions about PDLite? We're here to help. Reach out to us for support, 
+                  Have questions about PDLite? We’re here to help. Reach out to us for support, 
                   technical inquiries, or partnership opportunities.
                 </p>
                 <div className="space-y-3">
@@ -395,7 +395,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Research Integration</h3>
-                <p className="text-gray-600 text-sm">Opt-in participation in research studies and contribute to Parkinson's disease research.</p>
+                <p className="text-gray-600 text-sm">Opt-in participation in research studies and contribute to Parkinson’s disease research.</p>
               </div>
               <div className="card p-6 border-2 border-dashed border-gray-300">
                 <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
@@ -436,4 +436,3 @@ export default function Home() {
     </main>
   );
 }
-
