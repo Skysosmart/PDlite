@@ -5,9 +5,11 @@ import TrendsChart from "@/components/TrendsChart";
 import DoctorSearchPanel from "@/components/DoctorSearchPanel";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
+import { getLangFromCookies, tr } from "@/lib/lang";
 
 export default async function DoctorDashboard() {
 	const supabase = createSupabaseServerClient();
+	const lang = getLangFromCookies();
 	const { data: profile } = await supabase.from("profiles").select("role").single();
 	if (!profile || profile.role !== "doctor") redirect("/user");
 
@@ -30,19 +32,19 @@ export default async function DoctorDashboard() {
 	return (
 		<div className="space-y-8">
 			<div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-				<h1 className="text-3xl font-semibold">Doctor Dashboard</h1>
-				<p className="muted text-sm">Search patients by HN and monitor high-risk cases.</p>
+				<h1 className="text-3xl font-semibold">{tr(lang, "แดชบอร์ดแพทย์", "Doctor Dashboard")}</h1>
+				<p className="muted text-sm">{tr(lang, "ค้นหาผู้ป่วยด้วย HN และติดตามผู้มีความเสี่ยงสูง", "Search patients by HN and monitor high-risk cases.")}</p>
 			</div>
 
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 				<div className="card p-5 lg:col-span-2">
-					<h2 className="text-lg font-semibold mb-3">Search by HN</h2>
+					<h2 className="text-lg font-semibold mb-3">{tr(lang, "ค้นหาด้วยหมายเลข HN", "Search by HN")}</h2>
 					<DoctorSearchPanel />
-					<p className="muted text-sm mt-3">Enter a hospital number to jump directly to the patient’s biomarker trends and risk details.</p>
+					<p className="muted text-sm mt-3">{tr(lang, "กรอกหมายเลขโรงพยาบาลเพื่อดูแนวโน้มสารชีวภาพและรายละเอียดความเสี่ยงทันที", "Enter a hospital number to jump directly to the patient’s biomarker trends and risk details.")}</p>
 				</div>
 
 				<div className="card p-5">
-					<h2 className="text-lg font-semibold mb-4">Device data integration</h2>
+					<h2 className="text-lg font-semibold mb-4">{tr(lang, "การเชื่อมต่อข้อมูลอุปกรณ์", "Device data integration")}</h2>
 					<div className="space-y-3 text-sm text-gray-700">
 						<div className="flex items-center justify-between">
 							<span>ESP32 biosensor</span>
@@ -68,14 +70,14 @@ export default async function DoctorDashboard() {
 			</div>
 
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-				<MetricCard title="High-risk cases" value={String(highRisk.length)} sub="Queued for doctor review" />
-				<MetricCard title="Recent tests" value={String(list.length)} sub="Last 50 results" />
-				<MetricCard title="Latest risk score" value={latest ? (latest.risk_score ?? 0).toFixed(2) : "—"} sub={latest ? new Date(latest.created_at).toLocaleString() : "No data"} />
+				<MetricCard title={tr(lang, "ผู้ป่วยเสี่ยงสูง", "High-risk cases")} value={String(highRisk.length)} sub={tr(lang, "รอการตรวจสอบ", "Queued for doctor review")} />
+				<MetricCard title={tr(lang, "ผลทดสอบล่าสุด", "Recent tests")} value={String(list.length)} sub={tr(lang, "50 รายการล่าสุด", "Last 50 results")} />
+				<MetricCard title={tr(lang, "คะแนนความเสี่ยงล่าสุด", "Latest risk score")} value={latest ? (latest.risk_score ?? 0).toFixed(2) : "—"} sub={latest ? new Date(latest.created_at).toLocaleString() : tr(lang, "ยังไม่มีข้อมูล", "No data")} />
 			</div>
 
 			<div className="card p-5">
 				<div className="flex items-center justify-between mb-4">
-					<h2 className="text-lg font-semibold">Patient risk overview</h2>
+					<h2 className="text-lg font-semibold">{tr(lang, "ภาพรวมความเสี่ยงผู้ป่วย", "Patient risk overview")}</h2>
 					{latest && <StatusBadge level={latest.risk_level} />}
 				</div>
 				<div className="grid md:grid-cols-2 gap-6">
@@ -89,19 +91,19 @@ export default async function DoctorDashboard() {
 					/>
 					<div className="space-y-3 text-sm text-gray-700">
 						<div className="p-4 rounded-lg border border-gray-200 bg-gray-50">
-							<p className="font-semibold text-gray-900">Recommendation</p>
+							<p className="font-semibold text-gray-900">{tr(lang, "คำแนะนำ", "Recommendation")}</p>
 							<p className="text-gray-600 mt-1">
-								Review biomarker trajectories and consider scheduling a follow-up visit for any elevated or see-doctor results.
+								{tr(lang, "ตรวจสอบแนวโน้มสารชีวภาพและนัดติดตามสำหรับผลที่เสี่ยงสูง", "Review biomarker trajectories and consider scheduling a follow-up visit for any elevated or see-doctor results.")}
 							</p>
 						</div>
 						<ul className="space-y-2">
 							<li className="flex items-start gap-2">
 								<span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
-								<span>Use the HN search to pull the complete timeline and download result data.</span>
+								<span>{tr(lang, "ใช้การค้นหา HN เพื่อดูไทม์ไลน์และดาวน์โหลดข้อมูลผลตรวจ", "Use the HN search to pull the complete timeline and download result data.")}</span>
 							</li>
 							<li className="flex items-start gap-2">
 								<span className="mt-1 h-2 w-2 rounded-full bg-amber-500" />
-								<span>High-risk queue highlights any “see doctor” cases for immediate action.</span>
+								<span>{tr(lang, "คิวความเสี่ยงสูงจะแจ้งผลที่ควรพบแพทย์ทันที", "High-risk queue highlights any “see doctor” cases for immediate action.")}</span>
 							</li>
 						</ul>
 					</div>
@@ -110,8 +112,8 @@ export default async function DoctorDashboard() {
 
 			<div className="card p-5">
 				<div className="p-4 border border-gray-100 rounded-lg bg-white mb-4">
-					<h2 className="text-lg font-semibold">Recent Tests</h2>
-					<p className="muted text-sm">Latest submissions from the Raspberry Pi + ESP32 data pipeline.</p>
+					<h2 className="text-lg font-semibold">{tr(lang, "ผลล่าสุด", "Recent Tests")}</h2>
+					<p className="muted text-sm">{tr(lang, "ผลจาก Raspberry Pi + ESP32 ล่าสุด", "Latest submissions from the Raspberry Pi + ESP32 data pipeline.")}</p>
 				</div>
 				<div className="overflow-x-auto">
 					<table className="min-w-full text-sm">
@@ -141,20 +143,20 @@ export default async function DoctorDashboard() {
 
 			<div className="card p-5">
 				<div className="flex items-center justify-between mb-4">
-					<h2 className="text-lg font-semibold">High Risk Queue</h2>
-					<span className="text-sm muted">{highRisk.length} cases</span>
+					<h2 className="text-lg font-semibold">{tr(lang, "คิวผู้เสี่ยงสูง", "High Risk Queue")}</h2>
+					<span className="text-sm muted">{highRisk.length} {tr(lang, "เคส", "cases")}</span>
 				</div>
 				<div className="divide-y divide-gray-200">
-					{highRisk.length === 0 && <p className="p-4 text-gray-600">No high risk cases.</p>}
+					{highRisk.length === 0 && <p className="p-4 text-gray-600">{tr(lang, "ยังไม่มีผู้เสี่ยงสูง", "No high risk cases.")}</p>}
 					{highRisk.map((t) => (
 						<div key={t.id} className="p-4 flex items-center justify-between hover:bg-gray-50 rounded-lg">
 							<div>
 								<p className="text-sm muted">{new Date(t.created_at).toLocaleString()}</p>
-								<p className="text-gray-900 font-medium">User: {t.user_id}</p>
+								<p className="text-gray-900 font-medium">{tr(lang, "ผู้ใช้", "User")}: {t.user_id}</p>
 							</div>
 							<div className="flex items-center gap-3">
 								<StatusBadge level={"see_doctor"} />
-								<a className="text-emerald-600 hover:underline font-medium" href={`/doctor/patient/${t.user_id}`}>View</a>
+								<a className="text-emerald-600 hover:underline font-medium" href={`/doctor/patient/${t.user_id}`}>{tr(lang, "ดูรายละเอียด", "View")}</a>
 							</div>
 						</div>
 					))}

@@ -1,8 +1,13 @@
+"use client";
+
 import MetricCard from "@/components/MetricCard";
 import StatusBadge from "@/components/StatusBadge";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Home() {
+  const { t } = useLanguage();
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -12,15 +17,16 @@ export default function Home() {
             <span className="text-emerald-600">PD</span>
             <span className="text-gray-900">lite</span>
           </a>
-          <div className="flex gap-6 items-center">
-            <a href="/" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Home</a>
-            <a href="#contact" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Contact</a>
-            <a href="#information" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Information</a>
-            <a href="#developer" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Developer</a>
-            <a href="#ai-analytics" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">AI Analytics</a>
+          <div className="flex gap-4 items-center">
+            <a href="/" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "หน้าแรก", en: "Home" })}</a>
+            <a href="#contact" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "ติดต่อ", en: "Contact" })}</a>
+            <a href="#information" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "ข้อมูล", en: "Information" })}</a>
+            <a href="#developer" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "นักพัฒนา", en: "Developer" })}</a>
+            <a href="#ai-analytics" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "วิเคราะห์ AI", en: "AI Analytics" })}</a>
             <a href="/login" className="px-4 py-2 bg-emerald-500 text-white rounded-lg font-medium hover:bg-emerald-600 transition-colors">
-              Login
+              {t({ th: "เข้าสู่ระบบ", en: "Login" })}
             </a>
+            <LanguageToggle />
           </div>
         </nav>
       </header>
@@ -33,24 +39,24 @@ export default function Home() {
             <h1 className="text-7xl md:text-9xl font-bold mb-8 animate-fade-in">
               <span className="text-emerald-600">PD</span>
               <span className="text-gray-900">lite</span>
-            </h1>
+          </h1>
           </ScrollAnimation>
           <ScrollAnimation delay={400}>
             <p className="text-2xl md:text-4xl text-gray-700 mb-12 max-w-4xl mx-auto font-light leading-relaxed">
             Saliva-based pre-screening for Parkinson’s with real-time web dashboards.
-            </p>
+          </p>
           </ScrollAnimation>
           <ScrollAnimation delay={600}>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href="/login" className="px-10 py-4 bg-emerald-500 text-white rounded-lg font-semibold text-lg hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/30 hover:scale-105">
-                Login / Sign up
-              </a>
+              Login / Sign up
+            </a>
               <a href="/user" className="px-10 py-4 border-2 border-emerald-500 text-emerald-600 rounded-lg font-semibold text-lg hover:bg-emerald-500 hover:text-white transition-all hover:scale-105">
-                User Dashboard
-              </a>
+              User Dashboard
+            </a>
               <a href="/doctor" className="px-10 py-4 border-2 border-emerald-500 text-emerald-600 rounded-lg font-semibold text-lg hover:bg-emerald-500 hover:text-white transition-all hover:scale-105">
-                Doctor View
-              </a>
+              Doctor View
+            </a>
             </div>
           </ScrollAnimation>
         </div>
@@ -58,52 +64,52 @@ export default function Home() {
           <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </div>
-      </section>
+          </div>
+        </section>
 
       <div className="container mx-auto px-4 py-16">
 
         {/* Quick glance using shared components */}
         <ScrollAnimation>
-          <section className="grid md:grid-cols-3 gap-4 mb-16">
-            <MetricCard title="System Status" value="Online" sub="Cloud connected" />
-            <MetricCard title="Avg. Risk (demo)" value="0.42" sub="Last 24h" />
+        <section className="grid md:grid-cols-3 gap-4 mb-16">
+          <MetricCard title="System Status" value="Online" sub="Cloud connected" />
+          <MetricCard title="Avg. Risk (demo)" value="0.42" sub="Last 24h" />
             <div className="card p-5 flex items-center justify-between">
               <p className="text-gray-700">Example Status</p>
-              <StatusBadge level="normal" />
-            </div>
-          </section>
+            <StatusBadge level="normal" />
+          </div>
+        </section>
         </ScrollAnimation>
 
         {/* Feature highlights */}
         <ScrollAnimation>
-          <section className="grid md:grid-cols-3 gap-8 mb-24">
+        <section className="grid md:grid-cols-3 gap-8 mb-24">
             <div className="card p-8 hover:border-emerald-400 transition-all hover:scale-105">
               <div className="w-12 h-12 bg-emerald-500 rounded-lg mb-4 flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Fast Processing</h3>
               <p className="text-gray-600">Under 15 minutes per test with automated workflow.</p>
-            </div>
+          </div>
 
             <div className="card p-8 hover:border-emerald-400 transition-all hover:scale-105">
               <div className="w-12 h-12 bg-emerald-500 rounded-lg mb-4 flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Realtime Dashboards</h3>
               <p className="text-gray-600">Doctor and User UIs with mobile support.</p>
-            </div>
+          </div>
 
             <div className="card p-8 hover:border-emerald-400 transition-all hover:scale-105">
               <div className="w-12 h-12 bg-emerald-500 rounded-lg mb-4 flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Secure by Design</h3>
               <p className="text-gray-600">Supabase Auth + RLS, server-side ingestion.</p>
             </div>
@@ -341,7 +347,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          </section>
+        </section>
         </ScrollAnimation>
 
         {/* Future Features Section */}
@@ -425,7 +431,7 @@ export default function Home() {
               User Dashboard
             </a>
           </div>
-          </section>
+        </section>
         </ScrollAnimation>
 
         {/* Footer */}
