@@ -39,7 +39,10 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 			<body className="min-h-screen bg-gray-50 text-gray-900">
 				<div className="border-b border-gray-200 bg-white/80 backdrop-blur">
 					<nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-						<div className="text-xl font-bold text-emerald-600">PD Lite</div>
+						<div className="text-xl font-bold">
+							<span className="text-emerald-600">PD</span>
+							<span className="text-gray-900">lite</span>
+						</div>
 						<div className="flex gap-6 text-gray-600">
 							<a href="/user" className="hover:text-emerald-600 font-medium">Patient</a>
 							<a href="/doctor" className="hover:text-emerald-600 font-medium">Doctor</a>
