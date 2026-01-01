@@ -21,6 +21,11 @@ h1 {
   font-size: 2.5rem;
 }
 
+/* Hero logo override - make it huge */
+main section:first-of-type h1 {
+  font-size: clamp(8rem, 20vw, 36rem) !important;
+}
+
 h2 {
   font-size: 2rem;
 }
