@@ -43,14 +43,26 @@ p, span, div, a, button, label, input, select, textarea {
   font-size: 2.5rem !important;
   line-height: 1 !important;
   display: inline-block;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: middle;
+  height: auto;
+}
+
+.pdlite-logo.no-margin {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .pdlite-logo span {
   font-size: inherit !important;
   line-height: inherit !important;
   display: inline-block;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: baseline;
 }
 
 .text-sm {
