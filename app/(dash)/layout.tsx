@@ -11,9 +11,19 @@ function NavBar() {
 	return (
 		<div className="border-b border-gray-200 bg-white/80 backdrop-blur">
 			<nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-				<a href="/" className="pdlite-logo font-bold no-margin">
-					<span className="text-emerald-600">PD</span>
-					<span className="text-gray-900">lite</span>
+				<a 
+					href="/" 
+					className="font-bold"
+					style={{ 
+						fontSize: '3rem', 
+						lineHeight: '1', 
+						margin: 0, 
+						padding: 0,
+						display: 'inline-block'
+					}}
+				>
+					<span className="text-emerald-600" style={{ fontSize: 'inherit' }}>PD</span>
+					<span className="text-gray-900" style={{ fontSize: 'inherit' }}>lite</span>
 				</a>
 				<div className="flex items-center gap-6">
 					<a href="/user" className="text-lg hover:text-emerald-600 font-medium">{lang === "th" ? "ผู้ป่วย" : "Patient"}</a>
