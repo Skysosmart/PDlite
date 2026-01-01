@@ -46,9 +46,9 @@ export default async function UserDashboard() {
 								<p className="text-sm font-semibold text-gray-900">{tr(lang, "ระดับความเสี่ยง", "Risk classification")}</p>
 								<p className="text-sm text-gray-600 mt-1">{tr(lang, "รหัสสีเข้าใจง่าย:", "Color-coded for quick understanding:")}</p>
 								<div className="flex gap-3 mt-3">
-									<span className="px-3 py-1 rounded-full text-sm bg-emerald-50 text-emerald-700 border border-emerald-100">Green = Safe</span>
-									<span className="px-3 py-1 rounded-full text-sm bg-amber-50 text-amber-700 border border-amber-100">Yellow = Moderate</span>
-									<span className="px-3 py-1 rounded-full text-sm bg-rose-50 text-rose-700 border border-rose-100">Red = High</span>
+									<span className="px-3 py-1 rounded-full text-sm bg-emerald-50 text-emerald-700 border border-emerald-100">{tr(lang, "เขียว = ปลอดภัย", "Green = Safe")}</span>
+									<span className="px-3 py-1 rounded-full text-sm bg-amber-50 text-amber-700 border border-amber-100">{tr(lang, "เหลือง = ปานกลาง", "Yellow = Moderate")}</span>
+									<span className="px-3 py-1 rounded-full text-sm bg-rose-50 text-rose-700 border border-rose-100">{tr(lang, "แดง = สูง", "Red = High")}</span>
 								</div>
 								<p className="text-sm text-gray-700 mt-3">
 									{tr(lang, "ถ้าเป็นสีแดง แนะนำให้ติดต่อคลินิกหรือนัดหมายด้านล่าง", "If you see red, please contact your clinic or schedule an appointment below.")}
@@ -111,8 +111,8 @@ export default async function UserDashboard() {
 							<tr>
 								<th className="px-4 py-3">{tr(lang, "วันที่", "Date")}</th>
 								<th className="px-4 py-3">{tr(lang, "ความเสี่ยง", "Risk")}</th>
-								<th className="px-4 py-3">{tr(lang, "Total", "Total")}</th>
-								<th className="px-4 py-3">{tr(lang, "Oligomeric", "Oligomeric")}</th>
+								<th className="px-4 py-3">{tr(lang, "Total α-syn", "Total α-syn")}</th>
+								<th className="px-4 py-3">{tr(lang, "Oligomeric α-syn", "Oligomeric α-syn")}</th>
 								<th className="px-4 py-3">DJ-1</th>
 								<th className="px-4 py-3">Tau</th>
 								<th className="px-4 py-3"></th>

@@ -48,15 +48,15 @@ export default async function DoctorDashboard() {
 					<h2 className="text-lg font-semibold mb-4">{tr(lang, "การเชื่อมต่อข้อมูลอุปกรณ์", "Device data integration")}</h2>
 					<div className="space-y-3 text-sm text-gray-700">
 						<div className="flex items-center justify-between">
-							<span>ESP32 biosensor</span>
-							<span className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 text-xs font-semibold">Online</span>
+							<span>{tr(lang, "เซ็นเซอร์ชีวภาพ ESP32", "ESP32 biosensor")}</span>
+							<span className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 text-xs font-semibold">{tr(lang, "ออนไลน์", "Online")}</span>
 						</div>
 						<div className="flex items-center justify-between">
-							<span>Raspberry Pi 4 (camera)</span>
-							<span className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 text-xs font-semibold">Streaming</span>
+							<span>{tr(lang, "Raspberry Pi 4 (กล้อง)", "Raspberry Pi 4 (camera)")}</span>
+							<span className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 text-xs font-semibold">{tr(lang, "กำลังสตรีม", "Streaming")}</span>
 						</div>
 						<div className="flex items-center justify-between">
-							<span>Result API</span>
+							<span>{tr(lang, "API ผลลัพธ์", "Result API")}</span>
 							<span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100 text-xs font-semibold">HTTP POST</span>
 						</div>
 						<div className="rounded-lg bg-gray-900 text-gray-100 text-xs font-mono p-3">
@@ -65,7 +65,7 @@ export default async function DoctorDashboard() {
 								{`{ "hn": "123456", "total_syn": 1.23, "oligomeric_syn": 0.4, "dj1": 0.8, "tau": 0.2 }`}
 							</div>
 						</div>
-						<p className="text-xs text-gray-500">Device data is processed in real time and attached to the patient record.</p>
+						<p className="text-xs text-gray-500">{tr(lang, "ข้อมูลจากอุปกรณ์ถูกประมวลผลแบบเรียลไทม์และแนบเข้ากับบันทึกผู้ป่วย", "Device data is processed in real time and attached to the patient record.")}</p>
 					</div>
 				</div>
 			</div>
@@ -120,10 +120,10 @@ export default async function DoctorDashboard() {
 					<table className="min-w-full text-sm">
 						<thead className="text-left text-gray-500">
 							<tr>
-								<th className="px-4 py-3">Date</th>
-								<th className="px-4 py-3">HN / User</th>
-								<th className="px-4 py-3">Risk</th>
-								<th className="px-4 py-3">Score</th>
+								<th className="px-4 py-3">{tr(lang, "วันที่", "Date")}</th>
+								<th className="px-4 py-3">{tr(lang, "HN / ผู้ใช้", "HN / User")}</th>
+								<th className="px-4 py-3">{tr(lang, "ความเสี่ยง", "Risk")}</th>
+								<th className="px-4 py-3">{tr(lang, "คะแนน", "Score")}</th>
 								<th className="px-4 py-3"></th>
 							</tr>
 						</thead>
@@ -134,7 +134,7 @@ export default async function DoctorDashboard() {
 									<td className="px-4 py-3 text-gray-800">{t.user_id}</td>
 									<td className="px-4 py-3"><StatusBadge level={t.risk_level} /></td>
 									<td className="px-4 py-3 text-gray-800">{(t.risk_score ?? 0).toFixed(2)}</td>
-									<td className="px-4 py-3"><a className="text-emerald-600 hover:underline font-medium" href={`/doctor/patient/${t.user_id}`}>View</a></td>
+									<td className="px-4 py-3"><a className="text-emerald-600 hover:underline font-medium" href={`/doctor/patient/${t.user_id}`}>{tr(lang, "ดู", "View")}</a></td>
 								</tr>
 							))}
 						</tbody>
@@ -146,7 +146,7 @@ export default async function DoctorDashboard() {
 
 			{list.length > 0 && (
 				<div className="card p-5">
-					<h2 className="text-lg font-semibold mb-4">Trend snapshot</h2>
+					<h2 className="text-lg font-semibold mb-4">{tr(lang, "ภาพรวมแนวโน้ม", "Trend snapshot")}</h2>
 					<TrendsChart
 						data={list
 							.map((t: any) => ({
