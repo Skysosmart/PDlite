@@ -23,7 +23,7 @@ h1 {
 
 /* Hero logo override - make it huge */
 .hero-logo {
-  font-size: clamp(12rem, 30vw, 48rem) !important;
+  font-size: clamp(6rem, 15vw, 20rem) !important;
   line-height: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
