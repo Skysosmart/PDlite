@@ -13,7 +13,7 @@ export default function Home() {
       {/* Header */}
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur sticky top-0 z-50">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <a href="/" className="text-xl font-bold">
+          <a href="/" className="text-3xl font-bold">
             <span className="text-emerald-600">PD</span>
             <span className="text-gray-900">lite</span>
           </a>
@@ -36,26 +36,26 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_50%)]" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <ScrollAnimation delay={200}>
-            <h1 className="text-7xl md:text-9xl font-bold mb-8 animate-fade-in">
+            <h1 className="text-8xl md:text-[12rem] font-bold mb-8 animate-fade-in">
               <span className="text-emerald-600">PD</span>
               <span className="text-gray-900">lite</span>
           </h1>
           </ScrollAnimation>
           <ScrollAnimation delay={400}>
             <p className="text-2xl md:text-4xl text-gray-700 mb-12 max-w-4xl mx-auto font-light leading-relaxed">
-            Saliva-based pre-screening for Parkinson’s with real-time web dashboards.
+            {t({ th: "การตรวจคัดกรองโรคพาร์กินสันด้วยน้ำลาย พร้อมแดชบอร์ดแบบเรียลไทม์", en: "Saliva-based pre-screening for Parkinson's with real-time web dashboards." })}
           </p>
           </ScrollAnimation>
           <ScrollAnimation delay={600}>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href="/login" className="px-10 py-4 bg-emerald-500 text-white rounded-lg font-semibold text-lg hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/30 hover:scale-105">
-              Login / Sign up
+              {t({ th: "เข้าสู่ระบบ / สมัครสมาชิก", en: "Login / Sign up" })}
             </a>
               <a href="/user" className="px-10 py-4 border-2 border-emerald-500 text-emerald-600 rounded-lg font-semibold text-lg hover:bg-emerald-500 hover:text-white transition-all hover:scale-105">
-              User Dashboard
+              {t({ th: "แดชบอร์ดผู้ป่วย", en: "User Dashboard" })}
             </a>
               <a href="/doctor" className="px-10 py-4 border-2 border-emerald-500 text-emerald-600 rounded-lg font-semibold text-lg hover:bg-emerald-500 hover:text-white transition-all hover:scale-105">
-              Doctor View
+              {t({ th: "มุมมองแพทย์", en: "Doctor View" })}
             </a>
             </div>
           </ScrollAnimation>
@@ -72,10 +72,10 @@ export default function Home() {
         {/* Quick glance using shared components */}
         <ScrollAnimation>
         <section className="grid md:grid-cols-3 gap-4 mb-16">
-          <MetricCard title="System Status" value="Online" sub="Cloud connected" />
-          <MetricCard title="Avg. Risk (demo)" value="0.42" sub="Last 24h" />
+          <MetricCard title={t({ th: "สถานะระบบ", en: "System Status" })} value={t({ th: "ออนไลน์", en: "Online" })} sub={t({ th: "เชื่อมต่อคลาวด์", en: "Cloud connected" })} />
+          <MetricCard title={t({ th: "ความเสี่ยงเฉลี่ย (ตัวอย่าง)", en: "Avg. Risk (demo)" })} value="0.42" sub={t({ th: "24 ชั่วโมงล่าสุด", en: "Last 24h" })} />
             <div className="card p-5 flex items-center justify-between">
-              <p className="text-gray-700">Example Status</p>
+              <p className="text-gray-700">{t({ th: "สถานะตัวอย่าง", en: "Example Status" })}</p>
             <StatusBadge level="normal" />
           </div>
         </section>
@@ -90,8 +90,8 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Fast Processing</h3>
-              <p className="text-gray-600">Under 15 minutes per test with automated workflow.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t({ th: "ประมวลผลเร็ว", en: "Fast Processing" })}</h3>
+              <p className="text-gray-600">{t({ th: "ใช้เวลาน้อยกว่า 15 นาทีต่อการทดสอบด้วยระบบอัตโนมัติ", en: "Under 15 minutes per test with automated workflow." })}</p>
           </div>
 
             <div className="card p-8 hover:border-emerald-400 transition-all hover:scale-105">
@@ -100,8 +100,8 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
             </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Realtime Dashboards</h3>
-              <p className="text-gray-600">Doctor and User UIs with mobile support.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t({ th: "แดชบอร์ดแบบเรียลไทม์", en: "Realtime Dashboards" })}</h3>
+              <p className="text-gray-600">{t({ th: "อินเทอร์เฟซสำหรับแพทย์และผู้ใช้ รองรับมือถือ", en: "Doctor and User UIs with mobile support." })}</p>
           </div>
 
             <div className="card p-8 hover:border-emerald-400 transition-all hover:scale-105">
@@ -110,8 +110,8 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Secure by Design</h3>
-              <p className="text-gray-600">Supabase Auth + RLS, server-side ingestion.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t({ th: "ปลอดภัยตั้งแต่การออกแบบ", en: "Secure by Design" })}</h3>
+              <p className="text-gray-600">{t({ th: "Supabase Auth + RLS การประมวลผลฝั่งเซิร์ฟเวอร์", en: "Supabase Auth + RLS, server-side ingestion." })}</p>
             </div>
           </section>
         </ScrollAnimation>
@@ -119,9 +119,9 @@ export default function Home() {
         {/* AI Analytics Section */}
         <ScrollAnimation>
           <section id="ai-analytics" className="mb-24 scroll-mt-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">AI-Powered Analytics</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">{t({ th: "การวิเคราะห์ด้วย AI", en: "AI-Powered Analytics" })}</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Leveraging DeepSeek AI to analyze test results and provide personalized prevention strategies
+              {t({ th: "ใช้ DeepSeek AI วิเคราะห์ผลการทดสอบและให้คำแนะนำการป้องกันแบบส่วนบุคคล", en: "Leveraging DeepSeek AI to analyze test results and provide personalized prevention strategies" })}
             </p>
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="card p-8 border-2 border-emerald-200">
@@ -131,24 +131,23 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900">DeepSeek AI Analysis</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900">{t({ th: "การวิเคราะห์ด้วย DeepSeek AI", en: "DeepSeek AI Analysis" })}</h3>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Our AI system analyzes biomarker patterns from your test results using DeepSeek’s advanced language model 
-                  to identify risk factors and provide actionable insights.
+                  {t({ th: "ระบบ AI ของเราวิเคราะห์รูปแบบสารชีวภาพจากผลการทดสอบของคุณโดยใช้โมเดลภาษาขั้นสูงของ DeepSeek เพื่อระบุปัจจัยเสี่ยงและให้ข้อมูลเชิงลึกที่สามารถดำเนินการได้", en: "Our AI system analyzes biomarker patterns from your test results using DeepSeek's advanced language model to identify risk factors and provide actionable insights." })}
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-600 mt-1">✓</span>
-                    <span>Pattern recognition in biomarker levels</span>
+                    <span>{t({ th: "การจดจำรูปแบบในระดับสารชีวภาพ", en: "Pattern recognition in biomarker levels" })}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-600 mt-1">✓</span>
-                    <span>Personalized risk assessment</span>
+                    <span>{t({ th: "การประเมินความเสี่ยงแบบส่วนบุคคล", en: "Personalized risk assessment" })}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-600 mt-1">✓</span>
-                    <span>Evidence-based prevention recommendations</span>
+                    <span>{t({ th: "คำแนะนำการป้องกันตามหลักฐาน", en: "Evidence-based prevention recommendations" })}</span>
                   </li>
                 </ul>
               </div>
@@ -160,54 +159,54 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900">Prevention Strategies</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900">{t({ th: "กลยุทธ์การป้องกัน", en: "Prevention Strategies" })}</h3>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Based on your test results, our AI generates personalized prevention plans that include:
+                  {t({ th: "จากผลการทดสอบของคุณ AI ของเราสร้างแผนการป้องกันแบบส่วนบุคคลที่รวมถึง:", en: "Based on your test results, our AI generates personalized prevention plans that include:" })}
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-600 mt-1">•</span>
-                    <span>Lifestyle modifications (diet, exercise, sleep)</span>
+                    <span>{t({ th: "การปรับเปลี่ยนวิถีชีวิต (อาหาร การออกกำลังกาย การนอน)", en: "Lifestyle modifications (diet, exercise, sleep)" })}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-600 mt-1">•</span>
-                    <span>Early intervention recommendations</span>
+                    <span>{t({ th: "คำแนะนำการแทรกแซงตั้งแต่เนิ่นๆ", en: "Early intervention recommendations" })}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-600 mt-1">•</span>
-                    <span>Follow-up testing schedules</span>
+                    <span>{t({ th: "ตารางการทดสอบติดตามผล", en: "Follow-up testing schedules" })}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-600 mt-1">•</span>
-                    <span>When to consult healthcare professionals</span>
+                    <span>{t({ th: "เมื่อใดควรปรึกษาผู้เชี่ยวชาญด้านสุขภาพ", en: "When to consult healthcare professionals" })}</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             <div className="card p-8 bg-gradient-to-br from-emerald-50 to-emerald-100/50 border-2 border-emerald-200">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">How It Works</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t({ th: "วิธีการทำงาน", en: "How It Works" })}</h3>
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">1</div>
-                  <p className="text-gray-700 font-medium">Test Results</p>
-                  <p className="text-sm text-gray-600 mt-1">Biomarker data from hardware</p>
+                  <p className="text-gray-700 font-medium">{t({ th: "ผลการทดสอบ", en: "Test Results" })}</p>
+                  <p className="text-sm text-gray-600 mt-1">{t({ th: "ข้อมูลสารชีวภาพจากอุปกรณ์", en: "Biomarker data from hardware" })}</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">2</div>
-                  <p className="text-gray-700 font-medium">AI Analysis</p>
-                  <p className="text-sm text-gray-600 mt-1">DeepSeek processes patterns</p>
+                  <p className="text-gray-700 font-medium">{t({ th: "การวิเคราะห์ AI", en: "AI Analysis" })}</p>
+                  <p className="text-sm text-gray-600 mt-1">{t({ th: "DeepSeek ประมวลผลรูปแบบ", en: "DeepSeek processes patterns" })}</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">3</div>
-                  <p className="text-gray-700 font-medium">Insights</p>
-                  <p className="text-sm text-gray-600 mt-1">Personalized recommendations</p>
+                  <p className="text-gray-700 font-medium">{t({ th: "ข้อมูลเชิงลึก", en: "Insights" })}</p>
+                  <p className="text-sm text-gray-600 mt-1">{t({ th: "คำแนะนำแบบส่วนบุคคล", en: "Personalized recommendations" })}</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">4</div>
-                  <p className="text-gray-700 font-medium">Action Plan</p>
-                  <p className="text-sm text-gray-600 mt-1">Prevention strategies</p>
+                  <p className="text-gray-700 font-medium">{t({ th: "แผนการดำเนินการ", en: "Action Plan" })}</p>
+                  <p className="text-sm text-gray-600 mt-1">{t({ th: "กลยุทธ์การป้องกัน", en: "Prevention strategies" })}</p>
                 </div>
               </div>
             </div>
@@ -217,37 +216,35 @@ export default function Home() {
         {/* Information Section */}
         <ScrollAnimation>
           <section id="information" className="mb-24 scroll-mt-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Information</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">{t({ th: "ข้อมูล", en: "Information" })}</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="card p-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">About Parkinson’s Disease</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t({ th: "เกี่ยวกับโรคพาร์กินสัน", en: "About Parkinson's Disease" })}</h3>
               <p className="text-gray-700 mb-4">
-                Parkinson’s Disease is a progressive neurological disorder that affects movement. Early detection through 
-                salivary biomarkers can help identify risk factors before symptoms become severe.
+                {t({ th: "โรคพาร์กินสันเป็นความผิดปกติทางระบบประสาทที่ลุกลามซึ่งส่งผลต่อการเคลื่อนไหว การตรวจพบตั้งแต่เนิ่นๆ ผ่านสารชีวภาพในน้ำลายสามารถช่วยระบุปัจจัยเสี่ยงก่อนที่อาการจะรุนแรง", en: "Parkinson's Disease is a progressive neurological disorder that affects movement. Early detection through salivary biomarkers can help identify risk factors before symptoms become severe." })}
               </p>
               <p className="text-gray-700">
-                Our PDLite platform uses advanced biosensor technology to analyze key biomarkers including α-synuclein, 
-                DJ-1, and Tau proteins in saliva samples.
+                {t({ th: "แพลตฟอร์ม PDLite ของเราใช้เทคโนโลยีไบโอเซนเซอร์ขั้นสูงเพื่อวิเคราะห์สารชีวภาพหลัก รวมถึงโปรตีน α-synuclein, DJ-1 และ Tau ในตัวอย่างน้ำลาย", en: "Our PDLite platform uses advanced biosensor technology to analyze key biomarkers including α-synuclein, DJ-1, and Tau proteins in saliva samples." })}
               </p>
             </div>
             <div className="card p-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">How It Works</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t({ th: "วิธีการทำงาน", en: "How It Works" })}</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="h-2 w-2 mt-2 rounded-full bg-emerald-500 flex-shrink-0" />
-                  <span>Saliva sample collection at home or clinic</span>
+                  <span>{t({ th: "เก็บตัวอย่างน้ำลายที่บ้านหรือคลินิก", en: "Saliva sample collection at home or clinic" })}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="h-2 w-2 mt-2 rounded-full bg-emerald-500 flex-shrink-0" />
-                  <span>Automated analysis via ESP32/Raspberry Pi hardware</span>
+                  <span>{t({ th: "การวิเคราะห์อัตโนมัติผ่านอุปกรณ์ ESP32/Raspberry Pi", en: "Automated analysis via ESP32/Raspberry Pi hardware" })}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="h-2 w-2 mt-2 rounded-full bg-emerald-500 flex-shrink-0" />
-                  <span>Real-time results uploaded to secure dashboard</span>
+                  <span>{t({ th: "ผลลัพธ์แบบเรียลไทม์อัปโหลดไปยังแดชบอร์ดที่ปลอดภัย", en: "Real-time results uploaded to secure dashboard" })}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="h-2 w-2 mt-2 rounded-full bg-emerald-500 flex-shrink-0" />
-                  <span>Risk assessment and recommendations provided</span>
+                  <span>{t({ th: "การประเมินความเสี่ยงและคำแนะนำที่ให้มา", en: "Risk assessment and recommendations provided" })}</span>
                 </li>
               </ul>
             </div>
@@ -258,34 +255,33 @@ export default function Home() {
         {/* Developer Section */}
         <ScrollAnimation>
           <section id="developer" className="mb-24 scroll-mt-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Developer</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">{t({ th: "นักพัฒนา", en: "Developer" })}</h2>
           <div className="card p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Technology Stack</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t({ th: "เทคโนโลยีที่ใช้", en: "Technology Stack" })}</h3>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Frontend</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">{t({ th: "Frontend", en: "Frontend" })}</h4>
                 <ul className="text-gray-700 space-y-1">
                   <li>• Next.js 14 with TypeScript</li>
                   <li>• TailwindCSS for styling</li>
                   <li>• Chart.js for data visualization</li>
-                  <li>• Responsive design</li>
+                  <li>• {t({ th: "การออกแบบที่ตอบสนอง", en: "Responsive design" })}</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Backend</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">{t({ th: "Backend", en: "Backend" })}</h4>
                 <ul className="text-gray-700 space-y-1">
                   <li>• Supabase for authentication & database</li>
                   <li>• RESTful API integration</li>
                   <li>• Row Level Security (RLS)</li>
-                  <li>• Server-side data processing</li>
+                  <li>• {t({ th: "การประมวลผลข้อมูลฝั่งเซิร์ฟเวอร์", en: "Server-side data processing" })}</li>
                 </ul>
               </div>
             </div>
             <div>
-              <h4 className="font-semibold text-gray-900 mb-2">Hardware Integration</h4>
+              <h4 className="font-semibold text-gray-900 mb-2">{t({ th: "การเชื่อมต่อฮาร์ดแวร์", en: "Hardware Integration" })}</h4>
               <p className="text-gray-700">
-                ESP32 microcontroller for sensor control, Raspberry Pi 4 for image processing and data transmission. 
-                Camera module detects colorimetric changes in reagent tests.
+                {t({ th: "ไมโครคอนโทรลเลอร์ ESP32 สำหรับควบคุมเซนเซอร์ Raspberry Pi 4 สำหรับการประมวลผลภาพและการส่งข้อมูล โมดูลกล้องตรวจจับการเปลี่ยนแปลงสีในการทดสอบรีเอเจนต์", en: "ESP32 microcontroller for sensor control, Raspberry Pi 4 for image processing and data transmission. Camera module detects colorimetric changes in reagent tests." })}
               </p>
             </div>
           </div>
@@ -295,14 +291,13 @@ export default function Home() {
         {/* Contact Section */}
         <ScrollAnimation>
           <section id="contact" className="mb-24 scroll-mt-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Contact</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">{t({ th: "ติดต่อ", en: "Contact" })}</h2>
           <div className="card p-8 max-w-2xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Get in Touch</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{t({ th: "ติดต่อเรา", en: "Get in Touch" })}</h3>
                 <p className="text-gray-700 mb-4">
-                  Have questions about PDLite? We’re here to help. Reach out to us for support, 
-                  technical inquiries, or partnership opportunities.
+                  {t({ th: "มีคำถามเกี่ยวกับ PDLite? เราพร้อมช่วยเหลือ ติดต่อเราสำหรับการสนับสนุน คำถามทางเทคนิค หรือโอกาสในการเป็นพันธมิตร", en: "Have questions about PDLite? We're here to help. Reach out to us for support, technical inquiries, or partnership opportunities." })}
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
@@ -320,20 +315,20 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Send a Message</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{t({ th: "ส่งข้อความ", en: "Send a Message" })}</h3>
                 <form className="space-y-4">
                   <input
                     type="text"
-                    placeholder="Your Name"
+                    placeholder={t({ th: "ชื่อของคุณ", en: "Your Name" })}
                     className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                   <input
                     type="email"
-                    placeholder="Your Email"
+                    placeholder={t({ th: "อีเมลของคุณ", en: "Your Email" })}
                     className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                   <textarea
-                    placeholder="Your Message"
+                    placeholder={t({ th: "ข้อความของคุณ", en: "Your Message" })}
                     rows={4}
                     className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
@@ -341,7 +336,7 @@ export default function Home() {
                     type="submit"
                     className="w-full px-6 py-3 bg-emerald-500 text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors"
                   >
-                    Send Message
+                    {t({ th: "ส่งข้อความ", en: "Send Message" })}
                   </button>
                 </form>
               </div>
@@ -353,9 +348,9 @@ export default function Home() {
         {/* Future Features Section */}
         <ScrollAnimation>
           <section id="future-features" className="mb-24 scroll-mt-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">Future Development</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">{t({ th: "การพัฒนาต่อไป", en: "Future Development" })}</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Planned features and enhancements for PDLite platform
+              {t({ th: "คุณสมบัติและการปรับปรุงที่วางแผนไว้สำหรับแพลตฟอร์ม PDLite", en: "Planned features and enhancements for PDLite platform" })}
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="card p-6 border-2 border-dashed border-gray-300">
@@ -364,8 +359,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Mobile App</h3>
-                <p className="text-gray-600 text-sm">Native iOS and Android apps for on-the-go access to test results and AI insights.</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t({ th: "แอปมือถือ", en: "Mobile App" })}</h3>
+                <p className="text-gray-600 text-sm">{t({ th: "แอป iOS และ Android แบบเนทีฟสำหรับเข้าถึงผลการทดสอบและข้อมูลเชิงลึกจาก AI ขณะเดินทาง", en: "Native iOS and Android apps for on-the-go access to test results and AI insights." })}</p>
               </div>
               <div className="card p-6 border-2 border-dashed border-gray-300">
                 <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
@@ -373,8 +368,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Family History Tracking</h3>
-                <p className="text-gray-600 text-sm">Track family medical history and genetic predispositions for comprehensive risk assessment.</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t({ th: "การติดตามประวัติครอบครัว", en: "Family History Tracking" })}</h3>
+                <p className="text-gray-600 text-sm">{t({ th: "ติดตามประวัติทางการแพทย์ของครอบครัวและความโน้มเอียงทางพันธุกรรมสำหรับการประเมินความเสี่ยงที่ครอบคลุม", en: "Track family medical history and genetic predispositions for comprehensive risk assessment." })}</p>
               </div>
               <div className="card p-6 border-2 border-dashed border-gray-300">
                 <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
@@ -382,8 +377,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Advanced Analytics</h3>
-                <p className="text-gray-600 text-sm">Longitudinal trend analysis, predictive modeling, and population health insights.</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t({ th: "การวิเคราะห์ขั้นสูง", en: "Advanced Analytics" })}</h3>
+                <p className="text-gray-600 text-sm">{t({ th: "การวิเคราะห์แนวโน้มตามระยะเวลา การสร้างแบบจำลองการทำนาย และข้อมูลเชิงลึกด้านสุขภาพของประชากร", en: "Longitudinal trend analysis, predictive modeling, and population health insights." })}</p>
               </div>
               <div className="card p-6 border-2 border-dashed border-gray-300">
                 <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
@@ -391,8 +386,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Automated Reminders</h3>
-                <p className="text-gray-600 text-sm">Smart notifications for follow-up tests, medication reminders, and health checkups.</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t({ th: "การแจ้งเตือนอัตโนมัติ", en: "Automated Reminders" })}</h3>
+                <p className="text-gray-600 text-sm">{t({ th: "การแจ้งเตือนอัจฉริยะสำหรับการทดสอบติดตามผล การเตือนยา และการตรวจสุขภาพ", en: "Smart notifications for follow-up tests, medication reminders, and health checkups." })}</p>
               </div>
               <div className="card p-6 border-2 border-dashed border-gray-300">
                 <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
@@ -400,8 +395,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Research Integration</h3>
-                <p className="text-gray-600 text-sm">Opt-in participation in research studies and contribute to Parkinson’s disease research.</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t({ th: "การบูรณาการการวิจัย", en: "Research Integration" })}</h3>
+                <p className="text-gray-600 text-sm">{t({ th: "การเข้าร่วมแบบเลือกเข้าร่วมในการศึกษาวิจัยและมีส่วนร่วมในการวิจัยโรคพาร์กินสัน", en: "Opt-in participation in research studies and contribute to Parkinson's disease research." })}</p>
               </div>
               <div className="card p-6 border-2 border-dashed border-gray-300">
                 <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
@@ -409,8 +404,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Telemedicine Integration</h3>
-                <p className="text-gray-600 text-sm">Direct video consultations with neurologists and specialists based on AI recommendations.</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t({ th: "การบูรณาการการแพทย์ทางไกล", en: "Telemedicine Integration" })}</h3>
+                <p className="text-gray-600 text-sm">{t({ th: "การปรึกษาผ่านวิดีโอโดยตรงกับนักประสาทวิทยาและผู้เชี่ยวชาญตามคำแนะนำของ AI", en: "Direct video consultations with neurologists and specialists based on AI recommendations." })}</p>
               </div>
             </div>
           </section>
@@ -419,16 +414,16 @@ export default function Home() {
         {/* CTA */}
         <ScrollAnimation>
           <section className="bg-gradient-to-r from-emerald-50 to-emerald-100/50 border border-emerald-200 rounded-2xl p-12 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to get started?</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{t({ th: "พร้อมเริ่มต้นแล้วหรือยัง?", en: "Ready to get started?" })}</h2>
           <p className="text-gray-700 mb-8 text-lg">
-            Sign in and view your dashboard, or explore the doctor view.
+            {t({ th: "เข้าสู่ระบบและดูแดชบอร์ดของคุณ หรือสำรวจมุมมองแพทย์", en: "Sign in and view your dashboard, or explore the doctor view." })}
           </p>
           <div className="flex gap-4 justify-center">
             <a href="/login" className="px-10 py-4 bg-emerald-500 text-white rounded-lg font-semibold text-lg hover:bg-emerald-600 transition-colors shadow-lg shadow-emerald-500/30">
-              Go to Login
+              {t({ th: "ไปที่หน้าเข้าสู่ระบบ", en: "Go to Login" })}
             </a>
             <a href="/user" className="px-10 py-4 border-2 border-emerald-500 text-emerald-600 rounded-lg font-semibold text-lg hover:bg-emerald-500 hover:text-white transition-colors">
-              User Dashboard
+              {t({ th: "แดชบอร์ดผู้ใช้", en: "User Dashboard" })}
             </a>
           </div>
         </section>
