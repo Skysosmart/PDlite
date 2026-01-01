@@ -23,7 +23,9 @@ h1 {
 
 /* Hero logo override - make it huge */
 main section:first-of-type h1 {
-  font-size: clamp(8rem, 20vw, 36rem) !important;
+  font-size: clamp(12rem, 30vw, 48rem) !important;
+  line-height: 1 !important;
+  margin: 0 !important;
 }
 
 h2 {
