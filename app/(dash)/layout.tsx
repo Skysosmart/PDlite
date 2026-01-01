@@ -11,7 +11,7 @@ function NavBar() {
 	return (
 		<div className="border-b border-gray-200 bg-white/80 backdrop-blur">
 			<nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-				<div className="text-2xl font-bold">
+				<div className="font-bold" style={{ fontSize: '2.5rem' }}>
 					<span className="text-emerald-600">PD</span>
 					<span className="text-gray-900">lite</span>
 				</div>
