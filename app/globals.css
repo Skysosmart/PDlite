@@ -23,11 +23,18 @@ h1 {
 
 /* Hero logo override - make it huge */
 .hero-logo {
-  font-size: clamp(5rem, 12vw, 16rem) !important;
+  font-size: clamp(3rem, 10vw, 12rem) !important;
   line-height: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
-  margin-bottom: 3rem !important;
+  margin-bottom: clamp(1.5rem, 4vw, 3rem) !important;
+}
+
+@media (min-width: 768px) {
+  .hero-logo {
+    font-size: clamp(5rem, 12vw, 16rem) !important;
+    margin-bottom: 3rem !important;
+  }
 }
 
 .hero-logo span {

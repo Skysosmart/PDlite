@@ -42,7 +42,7 @@ export default function Home() {
           </h1>
           </ScrollAnimation>
           <ScrollAnimation delay={400}>
-            <p className="text-2xl md:text-4xl text-gray-700 mb-12 max-w-4xl mx-auto font-light leading-relaxed">
+            <p className="text-lg md:text-2xl lg:text-4xl text-gray-700 mb-8 md:mb-12 max-w-4xl mx-auto font-light leading-relaxed px-4">
             {t({ th: "การตรวจคัดกรองโรคพาร์กินสันด้วยน้ำลาย พร้อมแดชบอร์ดแบบเรียลไทม์", en: "Saliva-based pre-screening for Parkinson's with real-time web dashboards." })}
           </p>
           </ScrollAnimation>
