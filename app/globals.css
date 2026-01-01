@@ -40,22 +40,6 @@ p, span, div, a, button, label, input, select, textarea {
   font-size: 1.125rem;
 }
 
-/* Dashboard logo override - ensure it's large and override global a tag */
-nav > a:first-child {
-  font-size: 3rem !important;
-  line-height: 1 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: inline-block !important;
-}
-
-nav > a:first-child span {
-  font-size: inherit !important;
-  line-height: inherit !important;
-  display: inline-block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
 
 .text-sm {
   font-size: 1rem;
