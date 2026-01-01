@@ -12,21 +12,23 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur sticky top-0 z-50">
-        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <a href="/" className="text-3xl font-bold">
+        <nav className="container mx-auto px-4 py-4 flex items-center gap-4">
+          <a href="/" className="text-2xl md:text-3xl font-bold flex-shrink-0">
             <span className="text-emerald-600">PD</span>
             <span className="text-gray-900">lite</span>
           </a>
-          <div className="flex gap-4 items-center">
-            <a href="/" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "หน้าแรก", en: "Home" })}</a>
-            <a href="#contact" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "ติดต่อ", en: "Contact" })}</a>
-            <a href="#information" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "ข้อมูล", en: "Information" })}</a>
-            <a href="#developer" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "นักพัฒนา", en: "Developer" })}</a>
-            <a href="#ai-analytics" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">{t({ th: "วิเคราะห์ AI", en: "AI Analytics" })}</a>
-            <a href="/login" className="px-4 py-2 bg-emerald-500 text-white rounded-lg font-medium hover:bg-emerald-600 transition-colors">
+          <div className="flex gap-4 items-center overflow-x-auto flex-1 scrollbar-hide">
+            <a href="/" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors whitespace-nowrap">{t({ th: "หน้าแรก", en: "Home" })}</a>
+            <a href="#contact" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors whitespace-nowrap">{t({ th: "ติดต่อ", en: "Contact" })}</a>
+            <a href="#information" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors whitespace-nowrap">{t({ th: "ข้อมูล", en: "Information" })}</a>
+            <a href="#developer" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors whitespace-nowrap">{t({ th: "นักพัฒนา", en: "Developer" })}</a>
+            <a href="#ai-analytics" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors whitespace-nowrap">{t({ th: "วิเคราะห์ AI", en: "AI Analytics" })}</a>
+            <a href="/login" className="px-4 py-2 bg-emerald-500 text-white rounded-lg font-medium hover:bg-emerald-600 transition-colors whitespace-nowrap flex-shrink-0">
               {t({ th: "เข้าสู่ระบบ", en: "Login" })}
             </a>
-            <LanguageToggle />
+            <div className="flex-shrink-0">
+              <LanguageToggle />
+            </div>
           </div>
         </nav>
       </header>
