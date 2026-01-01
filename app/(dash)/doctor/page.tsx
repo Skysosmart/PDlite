@@ -3,6 +3,7 @@ import MetricCard from "@/components/MetricCard";
 import StatusBadge from "@/components/StatusBadge";
 import TrendsChart from "@/components/TrendsChart";
 import DoctorSearchPanel from "@/components/DoctorSearchPanel";
+import QueueBoard from "@/components/QueueBoard";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import { getLangFromCookies, tr } from "@/lib/lang";
@@ -141,27 +142,7 @@ export default async function DoctorDashboard() {
 				</div>
 			</div>
 
-			<div className="card p-5">
-				<div className="flex items-center justify-between mb-4">
-					<h2 className="text-lg font-semibold">{tr(lang, "คิวผู้เสี่ยงสูง", "High Risk Queue")}</h2>
-					<span className="text-sm muted">{highRisk.length} {tr(lang, "เคส", "cases")}</span>
-				</div>
-				<div className="divide-y divide-gray-200">
-					{highRisk.length === 0 && <p className="p-4 text-gray-600">{tr(lang, "ยังไม่มีผู้เสี่ยงสูง", "No high risk cases.")}</p>}
-					{highRisk.map((t) => (
-						<div key={t.id} className="p-4 flex items-center justify-between hover:bg-gray-50 rounded-lg">
-							<div>
-								<p className="text-sm muted">{new Date(t.created_at).toLocaleString()}</p>
-								<p className="text-gray-900 font-medium">{tr(lang, "ผู้ใช้", "User")}: {t.user_id}</p>
-							</div>
-							<div className="flex items-center gap-3">
-								<StatusBadge level={"see_doctor"} />
-								<a className="text-emerald-600 hover:underline font-medium" href={`/doctor/patient/${t.user_id}`}>{tr(lang, "ดูรายละเอียด", "View")}</a>
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
+			<QueueBoard />
 
 			{list.length > 0 && (
 				<div className="card p-5">
