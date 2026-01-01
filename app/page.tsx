@@ -36,7 +36,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_50%)]" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <ScrollAnimation delay={200}>
-            <h1 className="text-[10rem] md:text-[20rem] lg:text-[24rem] font-bold mb-8 animate-fade-in leading-none">
+            <h1 className="text-[15rem] md:text-[28rem] lg:text-[32rem] xl:text-[36rem] font-bold mb-8 animate-fade-in leading-none">
               <span className="text-emerald-600">PD</span>
               <span className="text-gray-900">lite</span>
           </h1>
