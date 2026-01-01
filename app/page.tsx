@@ -17,7 +17,7 @@ export default function Home() {
             <span className="text-emerald-600">PD</span>
             <span className="text-gray-900">lite</span>
           </a>
-          <div className="flex gap-4 items-center overflow-x-auto flex-1 scrollbar-hide">
+          <div className="flex gap-4 items-center overflow-x-auto md:overflow-x-visible flex-1 scrollbar-hide md:scrollbar-default justify-end md:justify-end">
             <a href="/" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors whitespace-nowrap">{t({ th: "หน้าแรก", en: "Home" })}</a>
             <a href="#contact" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors whitespace-nowrap">{t({ th: "ติดต่อ", en: "Contact" })}</a>
             <a href="#information" className="text-gray-700 hover:text-emerald-600 font-medium transition-colors whitespace-nowrap">{t({ th: "ข้อมูล", en: "Information" })}</a>
