@@ -39,13 +39,18 @@ p, span, div, a, button, label, input, select, textarea {
 }
 
 /* Dashboard logo override - ensure it's large */
-nav > div:first-child {
+.pdlite-logo {
   font-size: 2.5rem !important;
   line-height: 1 !important;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
-nav > div:first-child span {
+.pdlite-logo span {
   font-size: inherit !important;
+  line-height: inherit !important;
+  display: inline-block;
 }
 
 .text-sm {

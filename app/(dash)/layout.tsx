@@ -11,10 +11,10 @@ function NavBar() {
 	return (
 		<div className="border-b border-gray-200 bg-white/80 backdrop-blur">
 			<nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-				<div className="font-bold" style={{ fontSize: '2.5rem', lineHeight: '1' }}>
-					<span className="text-emerald-600" style={{ fontSize: 'inherit' }}>PD</span>
-					<span className="text-gray-900" style={{ fontSize: 'inherit' }}>lite</span>
-				</div>
+				<a href="/" className="pdlite-logo font-bold">
+					<span className="text-emerald-600">PD</span>
+					<span className="text-gray-900">lite</span>
+				</a>
 				<div className="flex items-center gap-6">
 					<a href="/user" className="text-lg hover:text-emerald-600 font-medium">{lang === "th" ? "ผู้ป่วย" : "Patient"}</a>
 					<a href="/doctor" className="text-lg hover:text-emerald-600 font-medium">{lang === "th" ? "แพทย์" : "Doctor"}</a>
