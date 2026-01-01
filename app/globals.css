@@ -22,10 +22,17 @@ h1 {
 }
 
 /* Hero logo override - make it huge */
-main section:first-of-type h1 {
+.hero-logo {
   font-size: clamp(12rem, 30vw, 48rem) !important;
   line-height: 1 !important;
   margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-logo span {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  display: inline-block !important;
 }
 
 h2 {
